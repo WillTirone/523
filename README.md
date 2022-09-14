@@ -1,2 +1,2 @@
 # 523
-statistical computing test repo
+statistical computing repo
