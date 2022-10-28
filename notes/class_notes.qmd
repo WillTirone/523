@@ -4,6 +4,11 @@ format: html
 editor: visual
 ---
 
+```{r}
+install.packages("sqldf")
+library(sqldf)
+```
+
 # Notes
 
 error catching function / control flow
@@ -43,7 +48,7 @@ typeof(a)
 seq_along(NA)
 ```
 
-# 9/14 Lecture 
+# 9/14 Lecture
 
 ```{r}
 (df = data.frame(
@@ -63,9 +68,8 @@ str(df) # df is just a list
 
 What is this text block?
 
-```{=tex}
-\sum_{i=1}^{n}
-```
+\sum\_{i=1}\^{n}
+
 $$
 \sum_{i=1}^n
 $$
@@ -86,7 +90,7 @@ typeof(c(1,2))
 typeof(c(1L,2L))
 ```
 
-## Exercise 1 
+## Exercise 1
 
 ```{r}
 x = c(56, 3, 17, 2, 4, 9, 6, 5, 19, 5, 2, 3, 5, 0, 13, 12, 6, 31, 10, 21, 8, 4, 1, 1, 2, 5, 16, 1, 3, 8, 1,
@@ -119,4 +123,40 @@ x[x[odd_4] %% 2 == 0]
 ```{python}
 x = [1,3,3]
 [i for i in range(1,100,3)]
+```
+
+# Lecture 9/21
+
+long data: entries are in a row
+
+# Lecture 9/23
+
+MC Example
+
+```{r}
+runs <- 10
+sims <- rnorm(runs,mean=0,sd=1)
+mc.integral <- sum(sims >= 3 & sims <= 6)/runs
+mc.integral
+```
+
+```{r}
+sims
+```
+
+# Regex
+
+```{r}
+c("Jeremy Cruz", "Nathaniel Le", "Jasmine Chu", "Bradley Calderon Raygoza", 
+"Quinten Weller", "Katelien Kanamu-Hauanio", "Zuhriyaa al-Amen", 
+"Travale York", "Alexis Ahmed", "David Alcocer", "Jairo Martinez", 
+"Dwone Gallegos", "Amanda Sherwood", "Hadiyya el-Eid", "Shaimaaa al-Can", 
+"Sarah Love", "Shelby Villano", "Sundus al-Hashmi", "Dyani Loving", 
+"Shanelle Douglas")
+```
+
+# SQL 10/28/22 
+
+```{r}
+sqldf("select * from BOD where Time > 4")
 ```
